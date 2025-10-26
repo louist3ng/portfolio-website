@@ -2,10 +2,11 @@
 import React, { useEffect } from 'react'
 import Hero from './Hero/Hero'
 import Services from './services/Services'
-import Resume from './Resume/Resume'
+import Experience from './Experience/Experience'
 import Project from './Project/Project'
-import Skills from './Skills/Skills'
+import Languages from './Languages/Languages'
 import Contacts from './Contacts/Contacts'
+import Frameworks from './Frameworks/Frameworks'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 
@@ -28,9 +29,10 @@ const Home = () => {
         <div className="overflow-hidden text-white">
             <Hero />
             <Services />
-            <Resume />
+            <Experience />
             <Project />
-            <Skills />
+            <Languages />
+            <Frameworks />
             <Contacts />
         </div>
     )

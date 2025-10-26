@@ -3,9 +3,10 @@ import React from 'react'
 import { FaJava } from 'react-icons/fa'
 import {
     SiJavascript,
-    SiReact,
     SiTypescript,
     SiPython,
+    SiHtml5,
+    SiCss3,
 } from 'react-icons/si'
 import Tilt from 'react-parallax-tilt'
 
@@ -15,8 +16,12 @@ const skills = [
         icon: <SiJavascript />,
     },
     {
-        name: 'React',
-        icon: <SiReact />,
+        name: 'HTML',
+        icon: <SiHtml5 />,
+    },
+    {
+        name: 'CSS',
+        icon: <SiCss3 />,
     },
     {
         name: 'TypeScript',
@@ -32,9 +37,9 @@ const skills = [
     },
 ]
 
-const Skills = () => {
+const Languages = () => {
     return (
-        <div data-aos="fade-bottom" data-aos-anchor-placement="top-center" id="skills" className='text-white pt-16 pb-16'>
+        <div data-aos="fade-bottom" data-aos-anchor-placement="top-center" id="languages" className='text-white pt-16 pb-16'>
             <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white'>
                 My <span className='text-cyan-200'>Languages</span>
             </h1>
@@ -58,4 +63,4 @@ const Skills = () => {
     )
 }
 
-export default Skills
+export default Languages

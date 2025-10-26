@@ -12,27 +12,29 @@ const Project = () => {
                 <div data-aos="fade-up"
                     data-aos-anchor-placement="top-center"
                     data-aos-delay="200">
-                    <Image src="/images/p1.jpg" alt="Project 1" width={800} height={650} className='rounded-lg w-full h-auto' />
-                    <Link href="https://google.com" target="_blank" rel="noopener noreferrer">
+                    <Image src="/images/powerbi.png" alt="Project 1" width={800} height={650} className='rounded-lg w-full h-[400px] object-cover' />
+                    <Link href="https://paperthin.streamlit.app/" target="_blank" rel="noopener noreferrer">
                         <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-white hover:text-cyan-300 cursor-grab transition-all duration-300'>
-                            Modern Finance DashBoard
+                            Power BI Dashboard for Analytics
                         </h1>
                     </Link>
-                    <h1 className='pt-2 font-medium text-white/80 '>Apps, UI/UX</h1> </div>
+                    <h1 className='pt-2 font-medium text-white/80 '>Languages and Frameworks used:
+                        <span className='text-cyan-200'> Streamlit, Python, Power BI, Typescript, Express</span></h1> </div>
                 <div data-aos="fade-up"
                     data-aos-anchor-placement="top-center"
                     data-aos-delay="300">
-                    <Image src="/images/p2.jpg" alt="Project 2" width={800} height={650} className='rounded-lg w-full h-auto' />
-                    <Link href="https://google.com" target="_blank" rel="noopener noreferrer">
+                    <Image src="/images/chatbot.png" alt="Project 2" width={800} height={650} className='rounded-lg w-full h-[400px] object-contain' />
+                    <Link href="https://github.com/louist3ng/ip" target="_blank" rel="noopener noreferrer">
                         <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-white hover:text-cyan-300 cursor-grab transition-all duration-300'>
-                            Modern Finance DashBoard
+                            Chatbot for Task Tracking
                         </h1>
                     </Link>
-                    <h1 className='pt-2 font-medium text-white/80 '>Apps, UI/UX</h1> </div>
-                <div data-aos="fade-up"
+                    <h1 className='pt-2 font-medium text-white/80 '>Languages and Frameworks used:
+                        <span className='text-cyan-200'> Java, JavaFX</span></h1> </div>
+                {/* <div data-aos="fade-up"
                     data-aos-anchor-placement="top-center"
                     data-aos-delay="400">
-                    <Image src="/images/p3.jpg" alt="Project 3" width={800} height={650} className='rounded-lg w-full h-auto' />
+                    <Image src="/images/p3.jpg" alt="Project 3" width={800} height={650} className='rounded-lg w-full h-[400px] object-cover' />
                     <Link href="https://google.com" target="_blank" rel="noopener noreferrer">
                         <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-white hover:text-cyan-300 cursor-grab transition-all duration-300'>
                             Modern Finance DashBoard
@@ -43,14 +45,14 @@ const Project = () => {
                 <div data-aos="fade-up"
                     data-aos-anchor-placement="top-center"
                     data-aos-delay="500">
-                    <Image src="/images/p4.jpg" alt="Project 4" width={800} height={650} className='rounded-lg w-full h-auto' />
+                    <Image src="/images/p4.jpg" alt="Project 4" width={800} height={650} className='rounded-lg w-full h-[400px] object-cover' />
                     <Link href="https://google.com" target="_blank" rel="noopener noreferrer">
                         <h1 className='mt-4 text-xl sm:text-2xl font-semibold text-white hover:text-cyan-300 cursor-grab transition-all duration-300'>
                             Modern Finance DashBoard
                         </h1>
                     </Link>
                     <h1 className='pt-2 font-medium text-white/80 '>Apps, UI/UX</h1>
-                </div>
+                </div> */}
             </div>
         </div>
     )
