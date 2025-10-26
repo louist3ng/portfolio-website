@@ -2,7 +2,6 @@
 import React from 'react'
 import Image from 'next/image'
 import Typewriter from 'typewriter-effect'
-import { BsArrowRight } from 'react-icons/bs';
 import ParticlesHero from './ParticleBackground';
 
 const Hero = () => {
@@ -17,7 +16,7 @@ const Hero = () => {
                     Creating web products <br /> <span className="text-cyan-200"> and experiences </span>
                 </h1>
                 <h2 data-aos="fade-up" data-aos-delay="400" className="mt-5 text-sm px-2 text-center sm:text-2xl font-medium">
-                    Hi!, I'm Louis - A Passionate
+                    Hi!, I&apos;m Louis - A Passionate
                     <span className="text-cyan-200 font-bold">
                         <Typewriter options={{
                             strings: [

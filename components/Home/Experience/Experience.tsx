@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaCodepen, FaReact } from 'react-icons/fa'
+import { FaCodepen } from 'react-icons/fa'
 import ExperienceCard from './ExperienceCard'
 import { IoMdSchool } from 'react-icons/io'
 

@@ -3,7 +3,6 @@ import React from 'react'
 import { FaJava } from 'react-icons/fa'
 import {
     SiReact,
-    SiPython,
     SiNextdotjs,
     SiTailwindcss,
     SiExpress,
