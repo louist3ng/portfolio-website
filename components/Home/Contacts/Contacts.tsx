@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiEnvelope, BiLogoLinkedin, BiPhone } from 'react-icons/bi';
+import Link from 'next/link';
 
 const Contacts = () => {
     return (
@@ -23,10 +24,11 @@ const Contacts = () => {
                             <BiEnvelope className='w-9 h-9 text-cyan-200' />
                             <p className='text-xl font-bold text-gray-400'>tenglouistjj@gmail.com</p>
                         </div>
-                        <div className='flex items-center space-x-3 mb-4'>
-                            <BiLogoLinkedin className='w-9 h-9 text-cyan-200' />
-                            <p className='text-xl font-bold text-gray-400'>Louis Teng</p>
-                        </div>
+                        <Link href="https://www.linkedin.com/in/louis-teng-b36bb8300/" target="_blank" rel="noopener noreferrer"
+                            className='flex items-center space-x-3 mb-4 group'>
+                            <BiLogoLinkedin className='w-9 h-9 text-cyan-200 group-hover:text-blue-500 transition-colors duration-300' />
+                            <p className='text-xl font-bold text-gray-400 group-hover:text-cyan-300 transition-colors duration-300'>Louis Teng</p>
+                        </Link>
                     </div>
                     {/* Social icons */}
                     {/* <div className='flex items-center mt-8 space-x-3'>
@@ -40,7 +42,9 @@ const Contacts = () => {
                         </div>
                     </div> */}
                 </div>
-                <div className='md:p-10 p-5 bg-[#131332] rounded-lg'>
+                <div data-aos="zoom-in"
+                    data-aos-anchor-placement="top-center"
+                    className='md:p-10 p-5 bg-[#131332] rounded-lg'>
                     <input
                         type="text"
                         name="name"
@@ -65,9 +69,6 @@ const Contacts = () => {
                     duration-300 cursor-pointer text-white rounded-full'>
                         Send Message
                     </button>
-
-
-
                 </div>
 
             </div>
