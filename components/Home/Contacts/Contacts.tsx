@@ -1,5 +1,6 @@
 import React from 'react'
 import { BiEnvelope, BiLogoLinkedin, BiPhone } from 'react-icons/bi';
+import { FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
 
 const Contacts = () => {
@@ -31,16 +32,13 @@ const Contacts = () => {
                         </Link>
                     </div>
                     {/* Social icons */}
-                    {/* <div className='flex items-center mt-8 space-x-3'>
-                        <div className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-grab
-                        flex-col hover:bg-blue-800 transition-all duration-500">
+                    <div className='flex items-center mt-8 space-x-3'>
+                        <Link href="https://www.instagram.com/tengx4/" target="_blank" rel="noopener noreferrer"
+                            className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-grab
+                            flex-col hover:bg-blue-800 transition-all duration-500">
                             <FaInstagram className='text-white w-6 h-6' />
-                        </div>
-                        <div className="w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-grab
-                        flex-col hover:bg-blue-800 transition-all duration-500">
-                            <FaInstagram className='text-white w-6 h-6' />
-                        </div>
-                    </div> */}
+                        </Link>
+                    </div>
                 </div>
                 <div data-aos="zoom-in"
                     data-aos-anchor-placement="top-center"
