@@ -1,9 +1,55 @@
-import React from 'react'
+"use client";
+import React, { useState } from 'react'
 import { BiEnvelope, BiLogoLinkedin, BiPhone } from 'react-icons/bi';
 import { FaInstagram } from 'react-icons/fa';
 import Link from 'next/link';
 
 const Contacts = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'success' | 'error' | null>(null);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', phone: '', message: '' });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
     return (
         <div id="contact" className="pt-16 pb-16">
             <div className='w-[90%] md:w-[80%] lg:w-[70%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 
@@ -40,34 +86,58 @@ const Contacts = () => {
                         </Link>
                     </div>
                 </div>
-                <div data-aos="zoom-in"
+                <form onSubmit={handleSubmit} data-aos="zoom-in"
                     data-aos-anchor-placement="top-center"
                     className='md:p-10 p-5 bg-[#131332] rounded-lg'>
                     <input
                         type="text"
                         name="name"
+                        value={formData.name}
+                        onChange={handleChange}
                         placeholder='Name'
+                        required
                         className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none
                     rounded-md w-full placeholder:text-gray-400' />
                     <input
                         type="email"
                         name="email"
+                        value={formData.email}
+                        onChange={handleChange}
                         placeholder='Email'
+                        required
                         className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none
                     rounded-md w-full placeholder:text-gray-400' />
                     <input
                         type="text"
-                        name="message"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
                         placeholder='Mobile Number'
+                        required
                         className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none
                     rounded-md w-full placeholder:text-gray-400' />
-                    <textarea placeholder='Message' className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full
+                    <textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        placeholder='Message'
+                        required
+                        className='px-4 py-3.5 mt-6 bg-[#363659] text-white outline-none rounded-md w-full
                     placeholder:text-gray-400 h-[10rem]' />
-                    <button className='mt-8 px-12 py-4 bg-blue-950 hover:bg-blue-900 transition-all
-                    duration-300 cursor-pointer text-white rounded-full'>
-                        Send Message
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className='mt-8 px-12 py-4 bg-blue-950 hover:bg-blue-900 transition-all
+                    duration-300 cursor-pointer text-white rounded-full disabled:opacity-50'>
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
-                </div>
+                    {submitStatus === 'success' && (
+                        <p className='mt-4 text-green-400'>Message sent successfully!</p>
+                    )}
+                    {submitStatus === 'error' && (
+                        <p className='mt-4 text-red-400'>Failed to send message. Please try again.</p>
+                    )}
+                </form>
 
             </div>
         </div >
